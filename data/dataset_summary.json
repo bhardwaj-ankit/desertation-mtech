@@ -1,0 +1,66 @@
+{
+  "seed": 42,
+  "recurrence_horizon_days": 30,
+  "counts": {
+    "techlogs": 4425,
+    "knowledge_documents_synthetic": 563,
+    "knowledge_documents_real_ad": 500,
+    "real_sdr_normalised": 196118,
+    "real_sdr_defect_action_pairs": 26210,
+    "qa_items": 189
+  },
+  "splits": {
+    "label_space": {
+      "triage_classes": [
+        "ELECTRICAL_FAULT",
+        "HYDRAULIC_LEAK",
+        "FUEL_SYSTEM",
+        "STRUCTURAL_DAMAGE",
+        "SENSOR_INDICATION",
+        "PNEUMATIC_BLEED",
+        "LANDING_GEAR_BRAKE",
+        "POWERPLANT"
+      ],
+      "recurrence_classes": [
+        0,
+        1
+      ]
+    },
+    "split_strategy": "chronological (no temporal leakage)",
+    "fractions": {
+      "train": 0.8,
+      "val": 0.1,
+      "test": 0.1
+    },
+    "triage": {
+      "train": 3540,
+      "val": 442,
+      "test": 443,
+      "train_class_balance": {
+        "HYDRAULIC_LEAK": 423,
+        "ELECTRICAL_FAULT": 434,
+        "STRUCTURAL_DAMAGE": 418,
+        "POWERPLANT": 465,
+        "PNEUMATIC_BLEED": 428,
+        "SENSOR_INDICATION": 434,
+        "LANDING_GEAR_BRAKE": 459,
+        "FUEL_SYSTEM": 479
+      },
+      "with_signal_modality": 3915
+    },
+    "recurrence": {
+      "train": 3470,
+      "val": 372,
+      "test": 373,
+      "train_positive": 1240,
+      "test_positive": 125
+    }
+  },
+  "public_sources": {
+    "nasa_cmapss": "ok",
+    "faa_sdr": "ok",
+    "nasa_asrs": "ok",
+    "faa_ad": "ok"
+  },
+  "generated_unix": 1781425918
+}

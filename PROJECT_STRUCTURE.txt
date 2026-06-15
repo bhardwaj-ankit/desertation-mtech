@@ -1,0 +1,201 @@
+================================================================================
+  AGENTIC MULTIMODAL AI FOR AIRCRAFT TECHLOG INTELLIGENCE - PROJECT SETUP
+================================================================================
+
+PROJECT DIRECTORY: /Users/ankitbhardwaj/Documents/dissertaion-abstract/
+
+================================================================================
+                            FINAL PROJECT STRUCTURE
+================================================================================
+
+dissertaion-abstract/
+│
+├── 📄 TOOLS.md                          ← TECHNOLOGY STACK & INSTALLATION GUIDE
+├── 📄 README.md                         ← PROJECT OVERVIEW & QUICK START
+├── 📄 requirements.txt                  ← PYTHON DEPENDENCIES
+├── 📄 .env.example                      ← CONFIGURATION TEMPLATE
+├── 📄 .gitignore                        ← GIT IGNORE RULES
+├── 📄 PROJECT_STRUCTURE.txt             ← THIS FILE
+│
+├── 📂 research/                         ← RESEARCH DOCUMENTS & REFERENCES
+│   ├── Abstract report submitted.pdf
+│   ├── initial_abstract.md
+│   ├── deep-research-report.md
+│   ├── PROJECT--Multimodal Agentic AI for Aircraft Struc.md
+│   ├── Clarifications-for-submission.md
+│   ├── SubmissionGuidelin.md
+│   ├── Sample_Project Abstract_Outline Report_Course No._BITS ID No..docx
+│   ├── 2024AA5039.docx
+│   ├── 2024AA5039.md
+│   ├── Outline_Viva_Slides.pptx         ← VIVA PRESENTATION (15 slides)
+│   └── build_slides.py                  ← SLIDE GENERATION SCRIPT
+│
+├── 📂 src/                              ← SOURCE CODE
+│   ├── __init__.py
+│   ├── config.py                        ← Configuration loading from .env
+│   ├── embeddings.py                    ← (TO IMPLEMENT) Embedding utilities
+│   ├── vector_store.py                  ← (TO IMPLEMENT) Vector DB operations
+│   ├── rag_pipeline.py                  ← (TO IMPLEMENT) RAG implementation
+│   ├── api.py                           ← (TO IMPLEMENT) FastAPI endpoints
+│   ├── ui.py                            ← (TO IMPLEMENT) Streamlit dashboard
+│   │
+│   ├── 📂 agents/                       ← AGENT IMPLEMENTATIONS
+│   │   ├── __init__.py
+│   │   ├── orchestrator.py              ← (TO IMPLEMENT) LangGraph orchestrator
+│   │   ├── triage_agent.py              ← (TO IMPLEMENT) Defect classification
+│   │   ├── recurrence_agent.py          ← (TO IMPLEMENT) Recurrence prediction
+│   │   └── reasoning_agent.py           ← (TO IMPLEMENT) LLM reasoning
+│   │
+│   ├── 📂 models/                       ← ML MODEL IMPLEMENTATIONS
+│   │   ├── __init__.py
+│   │   ├── triage_classifier.py         ← (TO IMPLEMENT) Multimodal classifier
+│   │   ├── recurrence_predictor.py      ← (TO IMPLEMENT) LSTM model
+│   │   └── fine_tuning.py               ← (TO IMPLEMENT) LoRA fine-tuning
+│   │
+│   └── 📂 utils/                        ← UTILITY FUNCTIONS
+│       ├── __init__.py
+│       ├── data_processing.py           ← (TO IMPLEMENT) Data preprocessing
+│       ├── evaluation.py                ← (TO IMPLEMENT) Evaluation metrics
+│       └── logging.py                   ← (TO IMPLEMENT) Audit logging
+│
+├── 📂 data/                             ← DATASETS
+│   ├── raw/                             ← Raw datasets (public sources)
+│   │   └── .gitkeep
+│   └── processed/                       ← Processed & split datasets
+│       └── .gitkeep
+│
+├── 📂 models/                           ← TRAINED MODEL CHECKPOINTS
+│   └── .gitkeep
+│
+├── 📂 logs/                             ← TRAINING & AUDIT LOGS
+│   └── .gitkeep
+│
+├── 📂 tests/                            ← UNIT & INTEGRATION TESTS
+│   ├── (TO IMPLEMENT) test_embeddings.py
+│   ├── (TO IMPLEMENT) test_rag_pipeline.py
+│   ├── (TO IMPLEMENT) test_models.py
+│   └── (TO IMPLEMENT) test_agents.py
+│
+└── 📂 notebooks/                        ← JUPYTER NOTEBOOKS (EXPLORATION)
+    └── (TO IMPLEMENT) Exploration notebooks
+
+================================================================================
+                        WHAT WAS JUST DONE (SUMMARY)
+================================================================================
+
+✅ CREATED PROJECT STRUCTURE
+   - Organized all directories following professional Python project layout
+   - Separated research documents from source code
+   - Prepared for modular implementation
+
+✅ MOVED RESEARCH DOCUMENTS TO research/
+   - Abstract report (PDF)
+   - Initial abstract (MD)
+   - Deep research report
+   - Viva presentation slides (15 slides, pre-built)
+   - Previous project documents
+   - Build script for slides
+
+✅ CREATED DOCUMENTATION
+   - TOOLS.md          → Complete technology stack with installation guide
+   - README.md         → Project overview, architecture, quick start
+   - .env.example      → Configuration template for all settings
+   - .gitignore        → Git ignore rules for Python/ML projects
+   - PROJECT_STRUCTURE.txt → This file
+
+✅ CREATED SOURCE CODE SKELETON
+   - src/config.py     → Configuration management (loads from .env)
+   - src/agents/       → Agent implementations (orchestrator, triage, recurrence, reasoning)
+   - src/models/       → ML models (triage classifier, recurrence predictor, fine-tuning)
+   - src/utils/        → Utilities (data processing, evaluation, logging)
+
+✅ CREATED DATA DIRECTORIES
+   - data/raw/         → For raw datasets (public sources)
+   - data/processed/   → For training/validation/test splits
+   - models/           → For trained model checkpoints
+   - logs/             → For training & audit logs
+
+================================================================================
+                              NEXT STEPS
+================================================================================
+
+1. 📖 READ THE DOCUMENTATION
+   - Start with: TOOLS.md (installation & tech stack)
+   - Then: README.md (overview & architecture)
+
+2. 🔧 SETUP ENVIRONMENT
+   cd /Users/ankitbhardwaj/Documents/dissertaion-abstract
+   python -m venv venv
+   source venv/bin/activate
+   pip install -r requirements.txt
+   python -m spacy download en_core_web_sm
+
+3. ⚙️  CONFIGURE SYSTEM
+   cp .env.example .env
+   # Edit .env with your settings
+
+4. 💾 DOWNLOAD DATA
+   - Download FAA SDR, NASA ASRS, NASA C-MAPSS datasets
+   - Place in data/raw/
+
+5. 🚀 START IMPLEMENTATION
+   - Implement src/embeddings.py
+   - Implement src/vector_store.py
+   - Implement src/rag_pipeline.py
+   - Implement agents/
+   - Implement models/
+   - Create tests/
+   - Build Streamlit UI (src/ui.py)
+   - Build FastAPI backend (src/api.py)
+
+6. 📊 TRAIN & EVALUATE
+   - Prepare datasets
+   - Train triage classifier
+   - Train recurrence predictor
+   - Fine-tune LLM (LoRA)
+   - Evaluate metrics (retrieval, prediction, hallucination)
+
+7. 🧪 TEST & VALIDATE
+   pytest tests/ -v --cov=src
+
+================================================================================
+                          TECHNOLOGY STACK RECAP
+================================================================================
+
+Core Tools:
+  • LangGraph (agent orchestration)
+  • LangChain (RAG pipeline)
+  • Chroma (vector database)
+  • sentence-transformers (embeddings)
+  • Mistral-7B (LLM)
+  • PEFT + LoRA (fine-tuning)
+  • PyTorch + PyTorch Lightning (deep learning)
+  • FastAPI (REST API)
+  • Streamlit (UI dashboard)
+
+Evaluation:
+  • ragas (RAG metrics)
+  • scikit-learn (classification metrics)
+  • torchmetrics (PyTorch metrics)
+
+See TOOLS.md for full stack with alternatives!
+
+================================================================================
+                         RESOURCES & DOCUMENTATION
+================================================================================
+
+All research documents are in research/ folder:
+  ✓ Abstract report submitted.pdf
+  ✓ deep-research-report.md
+  ✓ Outline_Viva_Slides.pptx (15 slides)
+  ✓ Initial abstract & references
+
+Documentation:
+  ✓ TOOLS.md → Tech stack, installation, troubleshooting
+  ✓ README.md → Project overview, architecture, quick start
+  ✓ Code will have inline comments explaining logic
+
+================================================================================
+
+✨ Your project is ready! Start with reading TOOLS.md and README.md ✨
+
