@@ -1,17 +1,18 @@
 """
 Ingest the downloaded REAL public data into project-usable form.
 
-Two integrations make the live downloads directly consumable by the prototype:
+Three integrations make the live downloads directly consumable by the prototype:
 
-  1. FAA SDR  -> normalised defect records mapped onto the project's 8-class
+  1. FAA SDR   -> normalised defect records mapped onto the project's 8-class
      defect taxonomy (via JASC/ATA chapter + discrepancy-text keywords), so the
      real malfunction narratives can augment triage training / RAG context.
-  2. FAA AD   -> real Airworthiness Directive documents converted into the
+  2. FAA AD    -> real Airworthiness Directive documents converted into the
      knowledge-corpus schema and appended to ``corpus.jsonl`` (+ ``docs/``), so
      the RAG retriever cites genuine authoritative AD text, not only synthetic.
+  3. NASA ASRS -> de-identified maintenance/safety PDF report sets parsed into
+     structured JSONL and appended to the RAG corpus as CASE documents.
 
-NASA C-MAPSS and ASRS are already usable as downloaded (C-MAPSS in canonical
-schema; ASRS as de-identified PDF report sets) and are catalogued, not rewritten.
+NASA C-MAPSS is already usable as downloaded (canonical C-MAPSS schema).
 
 Run standalone:  python -m src.data.ingest_real
 """
@@ -22,6 +23,7 @@ import re
 import sys
 
 from . import taxonomy as tax
+from . import parse_asrs
 
 # Markers that separate the defect description from the corrective action inside
 # the single free-text SDR "Discrepancy" field (case-insensitive, first wins).
@@ -220,7 +222,8 @@ def ingest_ad(raw_dir="data/raw/faa_ad/real",
 def generate():
     sdr = ingest_sdr()
     ads = ingest_ad()
-    return {"real_sdr": sdr, "real_ad_docs": len(ads)}
+    asrs = parse_asrs.parse()
+    return {"real_sdr": sdr, "real_ad_docs": len(ads), "asrs": asrs}
 
 
 if __name__ == "__main__":

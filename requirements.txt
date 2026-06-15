@@ -1,0 +1,50 @@
+# ── Core data & ML ──────────────────────────────────────────────────────────
+numpy>=1.26,<2.0
+pandas>=2.1
+scikit-learn>=1.4
+torch>=2.2
+torchvision>=0.17
+
+# ── NLP & embeddings ─────────────────────────────────────────────────────────
+transformers>=4.40
+sentence-transformers>=2.6
+tokenizers>=0.19
+
+# ── LLM / agent orchestration ────────────────────────────────────────────────
+langchain>=0.2
+langchain-community>=0.2
+langchain-huggingface>=0.0.3
+langgraph>=0.1
+
+# ── Vector store ─────────────────────────────────────────────────────────────
+chromadb>=0.5
+
+# ── RAG evaluation ───────────────────────────────────────────────────────────
+ragas>=0.1
+
+# ── PDF parsing (NASA ASRS reports) ──────────────────────────────────────────
+pypdf>=4.2
+pdfminer.six>=20231228
+
+# ── API & UI ─────────────────────────────────────────────────────────────────
+fastapi>=0.111
+uvicorn[standard]>=0.29
+streamlit>=1.35
+
+# ── Config & utilities ────────────────────────────────────────────────────────
+python-dotenv>=1.0
+pydantic>=2.7
+tqdm>=4.66
+requests>=2.32
+
+# ── Notebooks ────────────────────────────────────────────────────────────────
+jupyter>=1.0
+ipykernel>=6.29
+matplotlib>=3.8
+seaborn>=0.13
+
+# ── Code quality ─────────────────────────────────────────────────────────────
+black>=24.4
+flake8>=7.0
+pytest>=8.1
+pytest-cov>=5.0

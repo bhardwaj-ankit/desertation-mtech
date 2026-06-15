@@ -38,7 +38,7 @@ def main():
     print("[4/8] RAG knowledge corpus (synthetic)")
     docs = generate_corpus.generate(techlogs=techlogs)
 
-    print("[5/8] ingest REAL downloads (FAA SDR -> normalised, FAA AD -> corpus)")
+    print("[5/8] ingest REAL downloads (FAA SDR -> normalised, FAA AD -> corpus, ASRS -> corpus)")
     real = ingest_real.generate()
 
     print("[6/8] C-MAPSS-style operational signals (synthetic, real C-MAPSS in data/raw)")
@@ -59,6 +59,7 @@ def main():
             "knowledge_documents_real_ad": real["real_ad_docs"],
             "real_sdr_normalised": real["real_sdr"].get("records", 0),
             "real_sdr_defect_action_pairs": real["real_sdr"].get("defect_action_pairs", 0),
+            "asrs_reports_parsed": real.get("asrs", {}).get("total_records", 0),
             "qa_items": len(qa),
         },
         "splits": manifest,
