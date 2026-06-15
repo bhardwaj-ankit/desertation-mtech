@@ -1,34 +1,3 @@
-# AN AGENTIC MULTIMODAL AI FRAMEWORK FOR AIRCRAFT TECHLOG INTELLIGENCE
-
-**BITS ZG628T: Dissertation**
-
-by
-
-**Ankit Bhardwaj**
-**2024AA05939**
-
-Dissertation work carried out at
-
-**The Emirates Group, Dubai, UAE**
-
-Submitted in partial fulfilment of
-**Master of Technology (Artificial Intelligence & Machine Learning)**
-degree programme
-
-Under the Supervision of
-*[Supervisor Name]*
-*[Supervisor Organisation]*
-
----
-
-**BIRLA INSTITUTE OF TECHNOLOGY & SCIENCE**
-**PILANI (RAJASTHAN)**
-
-**June 2026**
-
----
----
-
 ## ABSTRACT
 
 Aircraft maintenance operations at large carriers generate thousands of defect entries every month through electronic technical logbooks. Engineers working under time pressure often have to cross-reference maintenance manuals, MEL/CDL provisions, engineering orders, and previously resolved cases while moving between systems that do not talk to each other. This creates a high cognitive load, and even a delayed defect resolution can affect aircraft-on-ground time as well as operational safety.
@@ -51,7 +20,7 @@ At the mid-semester stage, I have completed the foundational data acquisition an
 2. System Architecture
 3. Data Acquisition and Preparation — Work Done
 4. Dataset Description and Statistics
-5. Future Plan
+5. Progress Report
 6. Abbreviations
 7. References
 
@@ -59,15 +28,15 @@ At the mid-semester stage, I have completed the foundational data acquisition an
 
 ## 1. INTRODUCTION AND PROBLEM CONTEXT
 
-The aircraft technical logbook is one of the most operationally critical records in commercial aviation. Every defect reported by a pilot, every maintenance action completed by an engineer, and every deferred item under a MEL provision is recorded there. At a large hub carrier operating several hundred aircraft, these entries can run into the thousands each week. Searching this data manually to identify patterns, retrieve the right manual section, or catch a recurring fault before it escalates is time-consuming and prone to missed connections.
+Every airline has to have a logbook which is used to record defects idenfied during the fligh or during service of the aircraft. Every defect reported by a pilot, every maintenance action completed by an engineer, and every deferred item under a MEL provision is recorded in the logbook. This data can grow into thousands of entries each week for a large international ariliner. However, this data currently serves only as a compliance and record-keeping requirement; it is not being used for predictive maintenance, anomaly pattern detection, or real-time decision support. This represents both a limitation and an opportunity.
 
-The practical problem I set out to address is simple to state but difficult to implement: how can an engineer ask a maintenance question in natural language, receive a relevant evidence-backed recommendation, and still remain within the three-to-five minute turnaround window that line maintenance often demands?
+The practical problem I set out to address is simple to state but difficult to implement: how can an engineer ask a maintenance question in natural language, receive a relevant evidence-backed recommendation. 
 
-Existing maintenance support tools at most carriers are largely retrieval-based. Engineers search PDF manuals by keyword, look up MEL items by ATA chapter, and rely on institutional memory for recurring fault patterns. These sources are not usually integrated, and they rarely provide a predictive view of repeat defects. The research opportunity is therefore to combine retrieval-augmented generation, multimodal deep learning, and agentic AI frameworks in a way that still respects the constraints of an airline MRO environment.
+Existing maintenance support tools at most carriers are largely retrieval-based. Engineers search PDF manuals by keyword, look up MEL items by ATA chapter, and rely on their memory for recurring fault patterns. These sources are not usually integrated, and they do not provide a predictive view of repeat defects. The research opportunity is therefore to combine retrieval-augmented generation, multimodal deep learning, and agentic AI frameworks in a way so that the constraints of an airline MRO environment are kept intact.
 
 The proposed framework consists of five interacting components: a retrieval agent drawing on a knowledge corpus of approximately 1,213 documents, a triage agent classifying defects across eight ATA-aligned fault categories, a recurrence prediction agent operating on per-tail defect histories, a reasoning agent using a parameter-efficient fine-tuned LLM, and a safety layer for confidence gating, abstention, and audit logging. The safety governance approach is aligned to EASA's Concept Paper on Level 1 and Level 2 Machine Learning applications (Issue 2, 2023).
 
-The dissertation is intended as a research prototype for academic purposes. No proprietary airline data is used at any stage; all real data comes from publicly accessible sources, and the synthetic component is clearly separated throughout.
+The dissertation project is intended as a research prototype for academic purposes. No proprietary airline data is used at any stage; all real data comes from publicly accessible sources, and the synthetic component is clearly separated throughout.
 
 ---
 
@@ -180,7 +149,7 @@ The 30,081 records that fell into the OTHER taxonomy bucket represent a real lim
 
 ---
 
-## 5. FUTURE PLAN
+## 5. PROGRESS REPORT
 
 | Sl No | Phase | Start Date – End Date | Work to be Done | Status |
 |-------|-------|-----------------------|-----------------|--------|
@@ -192,11 +161,11 @@ The 30,081 records that fell into the OTHER taxonomy bucket represent a real lim
 | 6 | API, UI & Evaluation | 07 Aug 2026 – 13 Aug 2026 | FastAPI backend; Streamlit engineer UI; full system evaluation against all metrics (AUROC, nDCG, hallucination rate, latency p95) | PENDING |
 | 7 | Dissertation Review & Submission | 14 Aug 2026 – 19 Aug 2026 | Submit dissertation to Supervisor and Additional Examiner for review; final corrections and submission | PENDING |
 
-**Table 2: Project Plan**
+**Table 2: Progress Report**
 
 ---
 
-## 6. ABBREVIATIONS
+## 6. ABBREVIATIONS USED
 
 | Abbreviation | Full Form |
 |---|---|
@@ -241,26 +210,6 @@ The 30,081 records that fell into the OTHER taxonomy bucket represent a real lim
 
 [3] Hu, E. J., Shen, Y., Wallis, P., et al. "LoRA: Low-Rank Adaptation of Large Language Models." *ICLR*, 2022.
 
-[4] Dettmers, T., Pagnoni, A., Holtzman, A., and Zettlemoyer, L. "QLoRA: Efficient Finetuning of Quantized LLMs." *NeurIPS*, 2023.
+[4] EASA Concept Paper: First Usable Guidance for Level 1 & 2 Machine Learning Applications, Issue 2, European Union Aviation Safety Agency, 2023.
 
-[5] Schick, T., Dwivedi-Yu, J., Dessi, R., et al. "Toolformer: Language Models Can Teach Themselves to Use Tools." *NeurIPS*, 2023.
-
-[6] Devlin, J., Chang, M-W., Lee, K., and Toutanova, K. "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding." *NAACL*, 2019.
-
-[7] Ouyang, L., Wu, J., Jiang, X., et al. "Training language models to follow instructions with human feedback." *NeurIPS*, 2022.
-
-[8] EASA Concept Paper: First Usable Guidance for Level 1 & 2 Machine Learning Applications, Issue 2, European Union Aviation Safety Agency, 2023.
-
-[9] IATA Guidance Material for Electronic Technical Logbooks (ELB) and Aircraft Health Monitoring (AHM), International Air Transport Association.
-
-[10] FAA Service Difficulty Reporting System. Federal Aviation Administration. Available: https://av-info.faa.gov/sdrx/
-
-[11] NASA ASRS Aviation Safety Reporting System Database. Available: https://asrs.arc.nasa.gov/
-
-[12] NASA C-MAPSS Turbofan Degradation Simulation Data Set. Prognostics Data Repository, NASA Ames Research Center. Available: https://www.nasa.gov/content/prognostics-center-of-excellence-data-set-repository
-
-[13] Saxena, A., Goebel, K., Simon, D., and Eklund, N. "Damage Propagation Modeling for Aircraft Engine Run-to-Failure Simulation." *1st International Conference on Prognostics and Health Management (PHM08)*, Denver, 2008.
-
-[14] NIST AI Risk Management Framework (AI RMF 1.0), National Institute of Standards and Technology, 2023.
-
-[15] MITRE ATLAS Adversarial Threat Landscape for AI Systems. Available: https://atlas.mitre.org/
+[5] NIST AI Risk Management Framework (AI RMF 1.0), National Institute of Standards and Technology, 2023.
